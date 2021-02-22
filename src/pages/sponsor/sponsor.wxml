@@ -1,0 +1,6 @@
+<!--pages/setting/bindingPhone/bindingPhone.wxml-->
+<view class="login">
+  <view class="header">
+    <view class="name">发起活动</view>
+  </view>
+</view>

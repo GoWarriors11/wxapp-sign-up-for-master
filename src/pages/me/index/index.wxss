@@ -1,0 +1,78 @@
+.authorize {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 999; }
+
+button {
+  margin: 0; }
+
+.head {
+  margin: 20rpx 0;
+  padding: 40rpx 30rpx;
+  background-color: #FFFFFF; }
+  .head .userinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .head .userinfo .userinfo-avatar {
+      width: 120rpx;
+      height: 120rpx;
+      border-radius: 50%; }
+    .head .userinfo .login-button {
+      width: 200rpx;
+      height: 80rpx;
+      background-color: #FFFFFF;
+      text-align: left;
+      color: #1dab1a; }
+    .head .userinfo .login-button::after {
+      border: 0; }
+    .head .userinfo .userinfo-nickname {
+      padding-left: 30rpx;
+      font-size: 32rpx;
+      color: #000000; }
+
+.my-activity {
+  margin: 20rpx 0;
+  padding: 40rpx 30rpx;
+  background-color: #FFFFFF; }
+  .my-activity .icon {
+    width: 40rpx;
+    height: 40tpx;
+    margin-right: 15rpx; }
+  .my-activity .top {
+    margin-bottom: 30rpx; }
+  .my-activity .item {
+    display: flex;
+    margin: 20rpx 30rpx; }
+    .my-activity .item .my {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .my-activity .item .my .num {
+        margin: 40rpx 0;
+        font-size: 50rpx;
+        color: #1dab1a; }
+
+.menu-box {
+  margin-bottom: 20rpx;
+  background-color: #FFFFFF; }
+  .menu-box:last-child {
+    margin-bottom: 0rpx; }
+  .menu-box .menu-item {
+    font-size: 30rpx;
+    padding: 40rpx 30rpx;
+    border-bottom: 1rpx solid #e0e0e0; }
+    .menu-box .menu-item:last-child {
+      border-bottom: 0rpx; }
+    .menu-box .menu-item .icon {
+      width: 40rpx;
+      height: 40rpx;
+      margin-right: 15rpx; }
+    .menu-box .menu-item .more {
+      width: 22rpx;
+      height: 22rpx; }

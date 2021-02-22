@@ -1,0 +1,50 @@
+.header {
+  margin: 30rpx;
+  color: #999999; }
+
+.infomation {
+  background-color: white;
+  padding: 0 30rpx; }
+  .infomation .signup_num {
+    height: 110rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1rpx solid #e0e0e0; }
+    .infomation .signup_num .num {
+      position: absolute;
+      right: 10rpx; }
+      .infomation .signup_num .num .icon {
+        width: 40rpx;
+        height: 40rpx; }
+      .infomation .signup_num .num .center {
+        margin: 0 20rpx; }
+  .infomation .name_1 {
+    height: 110rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1rpx solid #e0e0e0; }
+    .infomation .name_1 .text {
+      margin-right: 30rpx; }
+    .infomation .name_1 .icon {
+      position: absolute;
+      right: 10rpx;
+      width: 40rpx;
+      height: 40rpx; }
+  .infomation .name_2 {
+    height: 110rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1rpx solid #e0e0e0; }
+    .infomation .name_2 .text {
+      margin-right: 30rpx; }
+    .infomation .name_2 .icon {
+      position: absolute;
+      right: 10rpx;
+      width: 40rpx;
+      height: 40rpx; }
+
+.putactivity {
+  margin: 70rpx 30rpx; }

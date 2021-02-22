@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "canvas-watermark": "/components/watermark/watermark",
+    "authorize": "/components/authorize/authorize"
+  },
+  "navigationBarTitleText":"报名名单"
+}

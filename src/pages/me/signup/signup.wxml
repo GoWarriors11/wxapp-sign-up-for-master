@@ -1,0 +1,24 @@
+<!-- src/pages/me/D_signup/signup.wxml -->
+<view class="container">
+  <view class="header">填写报名信息</view>
+  <view class="infomation">
+    <view class="signup_num flex">
+      <view class="text">报名人数</view>
+      <view class="num flex" >
+        <image class="icon minus" bindtap="delList" data-el="lists" data-ind="{{index}}" wx:if="{{lists.length > 0 }}" src="/images/icon/apply-minus.png" /> 
+        <view class="center">{{ count ? count : "0" }}</view>
+        <image class="icon add" bindtap='addList'  data-el="lists" src="/images/icon/apply-add.png" />
+      </view>
+    </view>
+    <view wx:for="{{lists}}" wx:for-item="item" wx:for-index="index">
+      <view class="name_1 flex">
+        <view class="text">姓名</view>
+        <input placeholder="请输入" bindinput="onChangeText" data-field="lists" data-ind="{{index}}" data-el="nickname" value="{{item}}" placeholder-class="color:rgba(153, 153, 153, 1);" style="width:78%" />
+        <image class="icon add" bindtap='delList'  data-el="lists" data-ind="{{index}}" wx:if="{{lists.length > 0 }}" src="/images/icon/apply-delete.png" />
+      </view>
+    </view>
+  </view>
+  <view class="putactivity">
+    <button type="primary" bindtap="onSubmit">报名</button>
+  </view>
+</view>

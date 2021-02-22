@@ -1,0 +1,29 @@
+{
+  "name": "miniprogram",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "gulp default",
+    "lint": "eslint ./",
+    "lint:fix": "eslint --fix ./"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-less": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.16.4"
+  },
+  "engines": {
+    "node": ">= 10.15.0"
+  }
+}

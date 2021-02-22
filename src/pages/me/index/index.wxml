@@ -1,0 +1,56 @@
+<!-- src/pages/home/home.wxml -->
+<view class="container">
+  <!-- <view class='head '>
+    <block wx:if="{{!hasUserInfo && canIUse}}">
+      <view class="userinfo flex">
+        <image class="userinfo-avatar" src="/images/icon/default-avatar.png" />
+        <button class="login-button" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+          授权登录
+        </button>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="userinfo">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+    </block>
+  </view> -->
+  <view class='head'>
+    <view class="userinfo flex">
+      <image class="userinfo-avatar" src="{{userInfo.headImg ? userInfo.headImg : '/images/icon/default-avatar.png'}}" />
+      <button class="login-button" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{!isAuthorize}}">
+        授权登录
+      </button>
+      <text class="userinfo-nickname" wx:if="{{isAuthorize}}">{{userInfo.nickname}}</text>
+    </view>
+  </view>
+  <view class="my-activity">
+    <view class="top flex">
+      <image class="icon" src="/images/icon/me-activity.png" />
+      <view class="text">我的活动</view>
+    </view>
+    <view class="item flex">
+      <navigator class="my" url="../myactivity/index/index?type={{0}}">
+        <view class="num">{{myCenter[0]}}</view>
+        <view class="text">我发起的</view>
+      </navigator>
+      <navigator class="my" url="../myactivity/index/index?type={{1}}">
+        <view class="num">{{myCenter[1]}}</view>
+        <view class="text">我参与的</view>
+      </navigator>
+      <navigator class="my" url="../myactivity/index/index?type={{2}}">
+        <view class="num">{{myCenter[2]}}</view>
+        <view class="text">浏览过的</view>
+      </navigator>
+    </view>
+  </view>
+  <view class="menu-box">
+    <navigator class="menu-item flex flex-between flex-middle" hover-class="none" url="/pages/me/about/about">
+      <view class="flex flex-left flex-middle">
+        <image class="icon" src="/images/icon/me-about.png" mode="aspectFill"></image>
+        <view class="title">关于我们</view>
+      </view>
+    </navigator>
+  </view>
+</view>

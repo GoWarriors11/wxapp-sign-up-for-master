@@ -1,0 +1,17 @@
+<!--pages/setting/bindingPhone/bindingPhone.wxml-->
+<view class="login">
+  <view class="header">
+    <view class="name">欢迎登录智能访客系统</view>
+  </view>
+  <view class="form">
+    <view class="formItem flex flex-middle">
+      <input class="flex-item" placeholder="输入账号" placeholder-style="#999999" type="text" bindinput="onChange" data-type="loginName" value="{{loginName}}"></input>
+    </view>
+      <view class="formItem flex flex-middle">
+        <input class="flex-item" placeholder="输入密码" password="{{true}}" placeholder-style="#999999" type="text" bindinput="onChange" data-type="password" value="{{password}}"></input>
+      </view> 
+  </view>
+  <view class="staff">
+    <view class="affirm" bindtap="login">登录</view>
+  </view>
+</view>

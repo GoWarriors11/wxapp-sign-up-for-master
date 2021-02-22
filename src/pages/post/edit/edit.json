@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ds": "/components/switch/switch"
+  },
+  "navigationBarTitleText":"编辑活动"
+}

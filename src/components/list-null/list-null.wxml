@@ -1,0 +1,11 @@
+<!--components/list-null/list-null.wxml-->
+<view class="list-null" wx:if="{{isNull}}">
+  <!-- <image src="/images/icon/icon-empty-data.png"></image>
+  <view class='null' style='background-color:{{backgroundColor}}'>{{text}}</view> -->
+  <view class="noDataPage">
+    <image class="icon" src="/images/icon/noDataPage.png" />
+    <view class="text">{{text}}</view>
+    <view class="btn" bindtap="toPost">发起活动</view>
+  </view>
+</view>
+

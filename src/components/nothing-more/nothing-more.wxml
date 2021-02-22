@@ -1,0 +1,2 @@
+<!--components/nothing-more/nothing-more.wxml-->
+<view class='nothing' style='background-color:{{backgroundColor}}'>{{isLast ? "已经到底啦～" : "正在加载"}}</view>

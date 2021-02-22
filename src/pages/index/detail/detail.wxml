@@ -1,0 +1,129 @@
+<!-- pages/index/detail/detail.wxml -->
+<view class="container">
+  <view class="head">
+    <view class="user flex">
+      <image class="userImg" src="{{activitysDetail.headImg ? activitysDetail.headImg : '/images/icon/default-avatar.png'}}" mode="aspectFill"></image>
+      <view class="themes"></view>
+      <view class="theme">
+        <view class="theme-one flex flex-between flex-middle">
+          <view class="name flex">
+            <view class="{{activitysDetail.nickname.length > 10 && 'nameOne'}}">
+              @{{activitysDetail.nickname}}
+            </view>
+            <view class="nameTwo">发起</view>
+          </view>
+          <view class="time">{{gmtModified}}</view>
+        </view>
+        <view class="theme-two">{{activitysDetail.activity.title}}</view>
+      </view>
+    </view>
+    <view class="content-line flex flex-between flex-middle">
+      <view class="flex flex-middle">
+        <image class="icon" src="/images/icon/activity-people.png" mode="aspectFill"></image>
+        <view class="title">
+          共
+          <text style="color: #1DAB1A">{{activitysDetail.activity.totalCount}}</text>
+          个名额,参加
+          <text style="color: #1DAB1A">{{activitysDetail.activity.joinCount}}</text>
+          人,待定
+          <text style="color: #4A90E2">{{activitysDetail.activity.undeterminedCount}}</text>
+          人,缺席
+          <text style="color: #C3191B">{{activitysDetail.activity.absenceCount}}</text>
+          人
+        </view>
+      </view>
+    </view>
+    <view class="showmore flex" wx:if="{{applyDetail.joinList.length > 0 || applyDetail.insteadList.length > 0}}">
+      <view class="left">
+        <view class="join" style="background-color:#1DAB1A">参加</view>
+      </view>
+      <view class="list flex">
+        <view class="list_1 flex" wx:for="{{applyDetail.joinList}}" wx:key="key" data-id="{{item.id}}" wx:for-key="index" wx:for-index="index" wx:for-item="item">
+          <image class="userImg flex" src="{{item.headImg ? item.headImg : '/images/icon/default-avatar.png'}}"></image>
+          <view class="right">
+            <view class="name ">{{item.nickname}}</view>
+            <view class="date ">{{item.gmtCreate}}</view>
+          </view>
+        </view>
+        <view class="list_1 flex" wx:for="{{applyDetail.insteadList}}" wx:key="key" data-id="{{item.id}}" wx:for-key="index" wx:for-index="index" wx:for-item="item">
+          <image class="userImg flex" src="{{item.headImg ? item.headImg : '/images/icon/default-avatar.png'}}"></image>
+          <view class="is_join" style="background-color:#F5A623">
+            <text style="line-height:25rpx">代报名</text>
+          </view>
+          <view class="right">
+            <view class="name ">{{item.nickname}}</view>
+            <view class="date ">{{item.gmtCreate}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="showmore flex" wx:if="{{applyDetail.undeterminedList.length > 0 }}">
+      <view class="left">
+        <view class="join" style="background-color:#4A90E2">待定</view>
+      </view>
+      <view class="list flex">
+        <view class="list_1 flex" wx:for="{{applyDetail.undeterminedList}}" wx:key="key" data-id="{{item.id}}" wx:for-key="index" wx:for-index="index" wx:for-item="item">
+          <image class="userImg flex" src="{{item.headImg ? item.headImg : '/images/icon/default-avatar.png'}}"></image>
+          <view class="right">
+            <view class="name ">{{item.nickname}}</view>
+            <view class="date ">{{item.gmtCreate}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="showmore flex" wx:if="{{applyDetail.absentList.length > 0 }}">
+      <view class="left">
+        <view class="join" style="background-color:#C3191B">缺席</view>
+      </view>
+      <view class="list flex">
+        <view class="list_1 flex" wx:for="{{applyDetail.absentList}}" wx:key="key" data-id="{{item.id}}" wx:for-key="index" wx:for-index="index" wx:for-item="item">
+          <image class="userImg flex" src="{{item.headImg ? item.headImg : '/images/icon/default-avatar.png'}}"></image>
+          <view class="right">
+            <view class="name ">{{item.nickname}}</view>
+            <view class="date ">{{item.gmtCreate}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom" style="position:fixed;bottom:0;">
+    <view class="remain_num">剩余{{activitysDetail.activity.remainingCount}}个名额</view>
+    <view class="btn flex">
+      <view class="is_join" bindtap="showChoise" wx:if="{{isAuthorize}}">
+        <button type="primary">是否报名</button>
+      </view>
+      <view class="is_join" wx:if="{{!isAuthorize}}">
+        <button type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+          是否报名
+        </button>
+      </view>
+      <view class="share" wx:if="{{activitysDetail.activity.status !== 'notstarted' && activitysDetail.activity.status !== 'inprogress'}}">
+        <button class="share-line" data-id="{{activitysDetail.activity.id}}" data-memberList="{{activitysDetail.memberList}}" open-type='share' plain="true">
+          分享活动
+        </button>
+      </view>
+      <view class="share" wx:if="{{activitysDetail.activity.status === 'notstarted' || activitysDetail.activity.status === 'inprogress'}}">
+        <button catchtap='showDialogBtn' data-id="{{activitysDetail.activity.id}}" data-memberList="{{activitysDetail.memberList}}">
+          分享活动
+        </button>
+      </view>
+      <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModals}}"></view>
+      <view class="modal-dialog" wx:if="{{showModals}}">
+        <view class="modal-content">
+          <view class="title" style="font-weight: bold;">选择水印并分享</view>
+          <button class="option" open-type='share' plain="true" wx:for="{{showList}}" wx:key="key" data-title="{{item.title}}" wx:for-key="index" wx:for-index="index" wx:for-item="item">
+            <view class="option-line" data-title="{{item.title}}">
+              <view class="explain">{{item.title}}</view>
+              <view class="explains">{{item.line}}</view>
+            </view>
+          </button>
+        </view>
+        <view class="modal-footer">
+          <view class="btn-cancel" bindtap="hideModal" data-status="cancel">取消</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 水印 -->
+  <canvas-watermark text="{{text}}" isReveal="{{isReveal}}"></canvas-watermark>
+</view>

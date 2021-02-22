@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="top">
+    <view class="icon">
+      <image class="brand" src="/images/icon/brand.png" />
+      <view class="title">报名了么</view>
+    </view>
+  </view>
+  <view class="text">
+    <!-- 报名了么由笨马科技开发。广州笨马科技有限公司提供一站式产品服务支持，
+    包括小程序+APP/社区电商/视频直播/仓库管理/大数据可视化。 -->
+  </view>
+</view>

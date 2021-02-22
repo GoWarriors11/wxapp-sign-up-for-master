@@ -1,0 +1,167 @@
+page {
+  background-color: #FFFFFF; }
+
+.container {
+  background-color: #FFFFFF; }
+  .container .head {
+    padding: 30rpx;
+    padding-bottom: 180rpx; }
+    .container .head .user {
+      padding-bottom: 20rpx; }
+      .container .head .user .userImg {
+        width: 80rpx;
+        height: 80rpx;
+        border-radius: 50%; }
+      .container .head .user .themes {
+        border: 5px solid #ffffff;
+        border-right: 10px solid #f5f5f5;
+        height: 5rpx;
+        position: absolute;
+        top: 25px;
+        left: 55px; }
+      .container .head .user .theme {
+        margin-left: 30rpx;
+        padding: 20rpx;
+        background-color: #f5f5f5;
+        width: 78%; }
+        .container .head .user .theme .theme-one {
+          color: #999999;
+          font-size: 26rpx; }
+          .container .head .user .theme .theme-one .name .nameOne {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 160rpx; }
+          .container .head .user .theme .theme-one .name .nameTwo {
+            margin-left: 10rpx; }
+        .container .head .user .theme .theme-two {
+          margin-top: 20rpx;
+          color: #333333;
+          font-size: 32rpx;
+          font-weight: bold; }
+    .container .head .content-line {
+      margin: 10rpx 0rpx;
+      font-size: 30rpx; }
+      .container .head .content-line .title {
+        margin-left: 20rpx; }
+      .container .head .content-line .detail {
+        color: #999999;
+        font-size: 24rpx;
+        margin: 20rpx 0rpx 0rpx 60rpx; }
+    .container .head .showmore {
+      padding: 20rpx 0; }
+      .container .head .showmore .left .join {
+        font-size: 20rpx;
+        padding: 10rpx;
+        color: white;
+        border-radius: 20rpx;
+        width: 20rpx; }
+      .container .head .showmore .list {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 10rpx; }
+        .container .head .showmore .list .list_1 {
+          padding: 10rpx 5rpx;
+          position: relative; }
+          .container .head .showmore .list .list_1:nth-child(-n+3) {
+            padding: 5rpx 5rpx 10rpx; }
+          .container .head .showmore .list .list_1 .userImg {
+            width: 65rpx;
+            height: 65rpx;
+            margin-right: 8rpx;
+            border-radius: 50%; }
+          .container .head .showmore .list .list_1 .is_join {
+            position: absolute;
+            top: 48rpx;
+            width: 60rpx;
+            height: 24rpx;
+            font-size: 18rpx;
+            border-radius: 16rpx;
+            text-align: center;
+            color: #ffffff;
+            padding: 5rpx; }
+          .container .head .showmore .list .list_1 .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 28rpx;
+            width: 120rpx; }
+            .container .head .showmore .list .list_1 .right .name {
+              font-size: 20rpx;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis; }
+            .container .head .showmore .list .list_1 .right .date {
+              font-size: 17rpx;
+              color: #999999; }
+  .container .bottom {
+    background-color: #FFFFFF;
+    padding: 30rpx 0;
+    width: 100%; }
+    .container .bottom .remain_num {
+      color: #999999;
+      padding-left: 40rpx; }
+    .container .bottom .btn .is_join {
+      margin-right: 40rpx; }
+    .container .bottom .btn button {
+      height: 88rpx;
+      width: 320rpx;
+      font-size: 32rpx;
+      line-height: 88rpx; }
+    .container .bottom .btn .share .share-line {
+      background-color: #f8f8f8 !important;
+      color: #000 !important;
+      border: 1px solid #E0E0E0 !important; }
+    .container .bottom .modal-mask {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #000;
+      opacity: 0.5;
+      overflow: hidden;
+      z-index: 9000;
+      color: #fff; }
+    .container .bottom .modal-dialog {
+      width: 600rpx;
+      overflow: hidden;
+      position: fixed;
+      top: 40%;
+      left: 0;
+      z-index: 9999;
+      background: white;
+      margin: -280rpx 75rpx;
+      border-radius: 30rpx; }
+    .container .bottom .modal-content .title {
+      font-size: 34rpx;
+      font-weight: bold;
+      padding: 50rpx;
+      border-bottom: 0.5rpx solid #E0E0E0;
+      text-align: center;
+      color: black; }
+    .container .bottom .modal-content .option {
+      width: 100%;
+      padding-top: 10rpx !important;
+      border-top: 0rpx solid #E0E0E0 !important;
+      border-bottom: 1rpx solid #E0E0E0 !important;
+      border-left: 0rpx solid #E0E0E0 !important;
+      border-right: 0rpx solid #E0E0E0 !important;
+      border-radius: 0px !important;
+      text-align: center !important;
+      color: black !important;
+      height: 110rpx !important;
+      font-size: 32rpx !important;
+      line-height: 50rpx !important; }
+      .container .bottom .modal-content .option .option-line .explains {
+        font-size: 24rpx;
+        color: #999999; }
+    .container .bottom .modal-footer {
+      height: 100rpx;
+      font-size: 32rpx;
+      line-height: 95rpx; }
+      .container .bottom .modal-footer .btn-cancel {
+        width: 100%;
+        height: 100rpx;
+        color: #1cad1a;
+        text-align: center; }

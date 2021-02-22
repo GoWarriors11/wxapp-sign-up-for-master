@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText":"最新活动",
+  "usingComponents": {
+    "nothing-more": "/components/nothing-more/nothing-more",
+    "list-null": "/components/list-null/list-null",
+    "canvas-watermark": "/components/watermark/watermark",
+    "authorize": "/components/authorize/authorize"
+  }
+}

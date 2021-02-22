@@ -1,0 +1,64 @@
+.switch {
+  display: inline-block;
+  width: 100rpx;
+  height: 60rpx;
+  border-radius: 64rpx;
+  border: 2rpx solid #ccc;
+  background: #00c000;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+  overflow: hidden;
+}
+
+.switch_checked {
+  border-color: #00c000;
+}
+
+.switch view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.4);
+  transition: all 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+}
+
+.switch_checked view {
+  left: 100%;
+  transform: translateX(-100%);
+}
+
+.switch::before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 9999rpx;
+  background: #fff;
+  transition: all 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+}
+
+.switch_checked::before {
+  transform: scale(0);
+}
+
+.switch_disabled::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: -2rpx;
+  left: -2rpx;
+  right: -2rpx;
+  bottom: -2rpx;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.switch_no_radius, .switch_no_radius view, .switch_no_radius::before {
+  border-radius: 0;
+}

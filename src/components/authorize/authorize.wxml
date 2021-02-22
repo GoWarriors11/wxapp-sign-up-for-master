@@ -1,0 +1,2 @@
+<!--components/authorize/authorize.wxml-->
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{!isAuthorize}}" class="authorize" />

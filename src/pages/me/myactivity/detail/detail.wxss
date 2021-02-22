@@ -1,0 +1,214 @@
+page {
+  background-color: #FFFFFF; }
+
+.content {
+  position: relative;
+  padding: 0rpx 30rpx;
+  background-color: #FFFFFF;
+  border-top: 1rpx solid rgba(0, 0, 0, 0.1); }
+  .content .homeNewest {
+    width: 100rpx;
+    height: 48rpx;
+    margin-left: -20rpx; }
+  .content .flag_begintime {
+    position: absolute;
+    top: 5rpx;
+    left: 8rpx;
+    font-size: 25rpx;
+    line-height: 48rpx; }
+  .content .user {
+    margin-top: 30rpx; }
+    .content .user .userImg {
+      width: 80rpx;
+      height: 80rpx;
+      border-radius: 50%; }
+    .content .user .themes {
+      border: 5px solid #ffffff;
+      border-right: 10px solid #f5f5f5;
+      height: 5rpx;
+      position: absolute;
+      top: 25px;
+      left: 55px; }
+    .content .user .theme {
+      margin-left: 30rpx;
+      padding: 20rpx;
+      background-color: #f5f5f5;
+      width: 78%; }
+      .content .user .theme .theme-one {
+        color: #999999;
+        font-size: 26rpx; }
+        .content .user .theme .theme-one .name .nameOne {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width: 160rpx; }
+        .content .user .theme .theme-one .name .nameTwo {
+          margin-left: 10rpx; }
+      .content .user .theme .theme-two {
+        margin-top: 20rpx;
+        color: #333333;
+        font-size: 32rpx;
+        font-weight: bold; }
+  .content .content-line {
+    margin: 30rpx 0rpx;
+    font-size: 30rpx; }
+    .content .content-line .title {
+      margin-left: 20rpx; }
+    .content .content-line .detail {
+      color: #999999;
+      font-size: 28rpx;
+      margin: 20rpx 20rpx 0rpx 60rpx;
+      word-wrap: break-word;
+      word-break: normal;
+      line-height: 32rpx;
+      letter-spacing: 2rpx; }
+  .content .lineation {
+    margin: 30rpx 0rpx;
+    border-bottom: 1px solid #E0E0E0; }
+  .content .join_people {
+    display: flex;
+    margin: 40rpx 0rpx 10rpx;
+    flex-wrap: wrap; }
+    .content .join_people .join_user {
+      width: 33.3%;
+      margin-bottom: 30rpx;
+      justify-content: center; }
+    .content .join_people .left {
+      margin-right: 10rpx;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .content .join_people .left .userImg {
+        width: 70rpx;
+        height: 70rpx;
+        border-radius: 50%; }
+      .content .join_people .left .is_join {
+        position: absolute;
+        top: 48rpx;
+        width: 64rpx;
+        height: 25rpx;
+        font-size: 18rpx;
+        border-radius: 16rpx;
+        text-align: center;
+        color: #ffffff;
+        padding: 5rpx; }
+    .content .join_people .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 28rpx;
+      width: 120rpx; }
+      .content .join_people .right .name {
+        font-size: 20rpx;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .content .join_people .right .date {
+        font-size: 17rpx;
+        color: #999999; }
+  .content .rest {
+    color: #999999; }
+  .content .btn {
+    margin: 20rpx 0rpx; }
+    .content .btn .is_join {
+      margin-right: 40rpx; }
+    .content .btn button {
+      height: 88rpx;
+      width: 320rpx;
+      font-size: 32rpx;
+      line-height: 88rpx; }
+    .content .btn .share .share-line {
+      background-color: #f8f8f8 !important;
+      color: #000 !important;
+      border: 1px solid #E0E0E0 !important; }
+  .content .toPost {
+    background-color: #f8f8f8;
+    color: #666666;
+    margin: 40rpx 10rpx 0rpx;
+    padding: 24rpx;
+    font-size: 32rpx;
+    text-align: center;
+    border: 1px solid #E0E0E0;
+    border-radius: 10rpx; }
+  .content .modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+    z-index: 9000;
+    color: #fff; }
+  .content .modal-dialog {
+    width: 600rpx;
+    overflow: hidden;
+    position: fixed;
+    top: 40%;
+    left: 0;
+    z-index: 9999;
+    background: white;
+    margin: -280rpx 75rpx;
+    border-radius: 30rpx; }
+  .content .modal-content .title {
+    font-size: 34rpx;
+    font-weight: bold;
+    padding: 50rpx;
+    border-bottom: 0.5rpx solid #E0E0E0;
+    text-align: center;
+    color: black; }
+  .content .modal-content .option {
+    width: 100%;
+    padding-top: 10rpx !important;
+    border-top: 0rpx solid #E0E0E0 !important;
+    border-bottom: 1rpx solid #E0E0E0 !important;
+    border-left: 0rpx solid #E0E0E0 !important;
+    border-right: 0rpx solid #E0E0E0 !important;
+    border-radius: 0px !important;
+    text-align: center !important;
+    color: black !important;
+    height: 110rpx !important;
+    font-size: 32rpx !important;
+    line-height: 50rpx !important; }
+    .content .modal-content .option .option-line .explains {
+      font-size: 24rpx;
+      color: #999999; }
+  .content .modal-footer {
+    height: 100rpx;
+    font-size: 32rpx;
+    line-height: 95rpx; }
+    .content .modal-footer .btn-cancel {
+      width: 100%;
+      height: 100rpx;
+      color: #1cad1a;
+      text-align: center; }
+  .content .more {
+    padding: 30rpx 0;
+    position: relative; }
+    .content .more .text {
+      color: #999999; }
+    .content .more .right {
+      position: absolute;
+      right: 0; }
+      .content .more .right .text {
+        color: black;
+        padding-right: 20rpx; }
+  .content .operation {
+    padding: 30rpx 0; }
+    .content .operation .op_button {
+      flex: 1;
+      height: 80rpx;
+      text-align: center;
+      border-radius: 10rpx;
+      line-height: 80rpx;
+      margin: 0 20rpx;
+      background-color: #f0f0f0; }
+      .content .operation .op_button .op_button :hover {
+        background-color: #d1cfcf; }
+    .content .operation .button_2 {
+      margin: 0 20rpx; }
+    .content .operation .button_3 {
+      color: red;
+      margin: 0 20rpx; }

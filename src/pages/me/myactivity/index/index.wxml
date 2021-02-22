@@ -1,0 +1,155 @@
+<!-- 导航条 -->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">
+    {{item}}
+  </text>
+</view>
+<!-- 我发起的 -->
+<view hidden="{{currentTab !=0}}">
+  <view class="content" bindtap="showdetail" wx:for="{{myPublishList}}" wx:key="key" data-id="{{item.id}}" wx:for-key="index" wx:for-index="index" wx:for-item="item">
+    <view class="top">
+      <view class="title flex">
+        <image class="icon" src="/images/icon/me-activity.png" />
+        <view class="theme">{{item.title}}</view>
+        <!-- <view class="detail" style="color: {{item.color}}">● {{item.detail}}</view> -->
+        <view class="detail" style="color:#4A90E2" wx:if="{{item.status === 'notstarted'}}">
+          ● 未开始
+        </view>
+        <view class="detail" style="color:#C3191B" wx:if="{{item.status === 'expired'}}">
+          ● 已结束
+        </view>
+        <view class="detail" style="color:#9D9D9D" wx:if="{{item.status === 'canceled'}}">
+          ● 已取消
+        </view>
+        <view class="detail" style="color:#78ED73" wx:if="{{item.status === 'inprogress'}}">
+          ● 进行中
+        </view>
+      </view>
+      <view class="content-line flex flex-middle">
+        <image class="icon" src="/images/icon/activity-time.png" />
+        <view class="time">时间：{{item.date}}-{{item.finishTime}}</view>
+      </view>
+      <view class="content-line flex flex-middle">
+        <image class="icon" src="/images/icon/activity-address.png" />
+        <view class="address">地点：{{item.addressDistrictName}}</view>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="num">
+        共
+        <text style="color: #1DAB1A">{{item.totalCount}}</text>
+        个名额,参加
+        <text style="color: #1DAB1A">{{item.joinCount}}</text>
+        人,待定
+        <text style="color: #4A90E2">{{item.undeterminedCount}}</text>
+        人,缺席
+        <text style="color: #C3191B">{{item.absenceCount}}</text>
+        人
+      </view>
+      <view class="publish_time">{{item.gmtCreate}}发布</view>
+    </view>
+  </view>
+  <nothing-more isLast="{{myPublishLastPage}}" wx:if="{{!isNullMyPublish}}"></nothing-more>
+  <list-null isNull="{{isNullMyPublish}}" text="暂无相关活动记录~"></list-null>
+</view>
+<!-- 我参与的 -->
+<view hidden="{{currentTab !=1}}">
+  <!-- <view class="noDataPage">
+    <image class="icon" src="/images/icon/noDataPage.png" />
+    <view class="text">暂无活动记录</view>
+    <view class="btn">发起活动</view>
+  </view> -->
+  <view class="content" bindtap="showdetail" wx:for="{{myParticipateList}}" wx:key="key" data-id="{{item.id}}" wx:for-key="index" wx:for-index="index" wx:for-item="item">
+    <view class="top">
+      <view class="title flex">
+        <image class="icon" src="/images/icon/me-activity.png" />
+        <view class="theme">{{item.title}}</view>
+        <!-- <view class="detail" style="color: {{item.color}}">● {{item.detail}}</view> -->
+        <view class="detail" style="color:#4A90E2" wx:if="{{item.status === 'notstarted'}}">
+          ● 未开始
+        </view>
+        <view class="detail" style="color:#C3191B" wx:if="{{item.status === 'expired'}}">
+          ● 已结束
+        </view>
+        <view class="detail" style="color:#9D9D9D" wx:if="{{item.status === 'canceled'}}">
+          ● 已取消
+        </view>
+        <view class="detail" style="color:#78ED73" wx:if="{{item.status === 'inprogress'}}">
+          ● 进行中
+        </view>
+      </view>
+      <view class="content-line flex flex-middle">
+        <image class="icon" src="/images/icon/activity-time.png" />
+        <view class="time">时间：{{item.date}}-{{item.finishTime}}</view>
+      </view>
+      <view class="content-line flex flex-middle">
+        <image class="icon" src="/images/icon/activity-address.png" />
+        <view class="address">地点：{{item.addressDistrictName}}</view>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="num">
+        共
+        <text style="color: #1DAB1A">{{item.totalCount}}</text>
+        个名额,参加
+        <text style="color: #1DAB1A">{{item.joinCount}}</text>
+        人,待定
+        <text style="color: #4A90E2">{{item.undeterminedCount}}</text>
+        人,缺席
+        <text style="color: #C3191B">{{item.undeterminedCount}}</text>
+        人
+      </view>
+      <view class="publish_time">{{item.gmtCreate}}发布</view>
+    </view>
+  </view>
+  <nothing-more isLast="{{myParticipateLastPage}}" wx:if="{{!isNullMyParticipate}}"></nothing-more>
+  <list-null isNull="{{isNullMyParticipate}}" text="暂无相关活动记录~"></list-null>
+</view>
+<!-- 浏览过的 -->
+<view hidden="{{currentTab !=2}}">
+  <view class="content" bindtap="showdetail" wx:for="{{myBrowseList}}" wx:key="key" data-id="{{item.id}}" wx:for-key="index" wx:for-index="index" wx:for-item="item">
+    <view class="top">
+      <view class="title flex">
+        <image class="icon" src="/images/icon/me-activity.png" />
+        <view class="theme">{{item.title}}</view>
+        <!-- <view class="detail" style="color: {{item.color}}">● {{item.detail}}</view> -->
+        <view class="detail" style="color:#4A90E2" wx:if="{{item.status === 'notstarted'}}">
+          ● 未开始
+        </view>
+        <view class="detail" style="color:#C3191B" wx:if="{{item.status === 'expired'}}">
+          ● 已结束
+        </view>
+        <view class="detail" style="color:#9D9D9D" wx:if="{{item.status === 'canceled'}}">
+          ● 已取消
+        </view>
+        <view class="detail" style="color:#78ED73" wx:if="{{item.status === 'inprogress'}}">
+          ● 进行中
+        </view>
+      </view>
+      <view class="content-line flex flex-middle">
+        <image class="icon" src="/images/icon/activity-time.png" />
+        <view class="time">时间：{{item.date}}-{{item.finishTime}}</view>
+      </view>
+      <view class="content-line flex flex-middle">
+        <image class="icon" src="/images/icon/activity-address.png" />
+        <view class="address">地点：{{item.addressDistrictName}}</view>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="num">
+        共
+        <text style="color: #1DAB1A">{{item.totalCount}}</text>
+        个名额,参加
+        <text style="color: #1DAB1A">{{item.joinCount}}</text>
+        人,待定
+        <text style="color: #4A90E2">{{item.undeterminedCount}}</text>
+        人,缺席
+        <text style="color: #C3191B">{{item.undeterminedCount}}</text>
+        人
+      </view>
+      <view class="publish_time">{{item.gmtCreate}}发布</view>
+    </view>
+  </view>
+  <nothing-more isLast="{{myBrowseLastPage}}" wx:if="{{!isNullMyBrowse}}"></nothing-more>
+  <list-null isNull="{{isNullMyBrowse}}" text="暂无相关活动记录~"></list-null>
+</view>

@@ -1,0 +1,24 @@
+view{box-sizing: border-box;}
+/* 注意组件的宽度，默认横向撑开整个容器 */
+.star_wrapper{
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+}
+.star_wrapper_normal image{
+  width: 38rpx;
+  height: 36rpx;
+}
+.star_wrapper_large image{
+  width: 48rpx;
+  height: 48rpx;
+}
+.star_wrapper_small image{
+  width: 30rpx;
+  height: 28rpx;
+}
+image{
+  margin-left: 30rpx;
+}

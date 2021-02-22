@@ -1,0 +1,134 @@
+{
+  "appid": "wxfb0760d0a3d98fb7",
+  "projectname": "%E9%9D%99%E9%9D%99%E4%BC%91%E6%81%AF%E8%88%B1",
+  "description": "项目配置文件",
+  "compileType": "miniprogram",
+  "libVersion": "2.12.2",
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "miniprogramRoot": "src/",
+  "setting": {
+    "urlCheck": false,
+    "es6": false,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": true,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "userConfirmedBundleSwitch": false,
+    "minifyWXSS": true,
+    "useApiHostProcess": true
+  },
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "suffix",
+        "value": ".scss"
+      },
+      {
+        "type": "suffix",
+        "value": ".less"
+      }
+    ]
+  },
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 1,
+          "name": "个人中心",
+          "pathName": "pages/me/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 2,
+          "name": "pages/me/about/about",
+          "pathName": "pages/me/about/about",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/me/about/about",
+          "pathName": "pages/me/about/about",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/me/myactivity/index/index",
+          "pathName": "pages/me/myactivity/index/index",
+          "query": "id=1074",
+          "scene": null
+        },
+        {
+          "name": "pages/index/detail/detail",
+          "pathName": "pages/index/detail/detail",
+          "query": "id=1071",
+          "scene": null
+        },
+        {
+          "name": "pages/me/myactivity/detail/detail",
+          "pathName": "pages/me/myactivity/detail/detail",
+          "query": "id=1097",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/me/index/index",
+          "pathName": "pages/me/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/post/edit/edit",
+          "pathName": "pages/post/edit/edit",
+          "query": "id=1079",
+          "scene": null
+        },
+        {
+          "name": "pages/me/signup/signup",
+          "pathName": "pages/me/signup/signup",
+          "query": "id=1074",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

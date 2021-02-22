@@ -1,0 +1,16 @@
+<!-- 水印 -->
+<!-- <view class='water_top' style="pointer-events: none;">
+    <slot></slot>
+</view> -->
+
+
+
+<!-- <canvas-watermark>
+    <canvas canvas-id='myCanvas' class="canvas-watermark" style="pointer-events: none;"></canvas>
+</canvas-watermark> -->
+
+
+<!-- watermark.wxml只需要这一串 -->
+<view class="water_top" style="pointer-events: none;" wx:if="{{isReveal}}">
+    <view class="water-text">{{text}}</view>
+</view>

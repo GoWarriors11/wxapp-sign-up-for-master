@@ -1,0 +1,5 @@
+<template name='submitBtn'>
+  <view class="btnArea flex flex-center">
+    <view class="submitBtn  {{submitBtn.disabled ? 'btnDisabled' : ''}}">{{submitBtn.text}}</view>
+  </view>
+</template>

@@ -1,0 +1,110 @@
+<!-- src/pages/post/post.wxml -->
+<view class="container">
+  <view class="section" style="padding-bottom: 16rpx">
+    <view class="line flex flex-middle">
+      <view class="title">主题</view>
+      <view class="detailed flex flex-item-1">
+        <input placeholder="请输入少于16个字的活动主题" maxlength="16" style="width: 100%;" bindinput="onChangeText" data-field="title" value="{{title}}" />
+      </view>
+    </view>
+    <view class="line flex flex-middle required">
+      <view class="title">日期</view>
+      <view class="detailed flex flex-item-1">
+        <view class="text flex-item {{date && 'selected'}}">{{date ? date : "请选择"}}</view>
+        <picker mode="date" value="{{date}}" start="{{startDate}}" bindchange="bindDateChange">
+          <view class="picker"></view>
+          <image class="icon-more" style="width: 30rpx; height: 30rpx; margin-right: 12rpx;" src="/images/icon/sponsor-record.png"></image>
+        </picker>
+      </view>
+    </view>
+    <view class="line flex flex-middle required">
+      <view class="title">时间</view>
+      <view class="detailed flex flex-item-1">
+        <view>
+          <view class="text {{startTime && 'selected'}}">{{startTime ? startTime : "开始"}}</view>
+          <picker mode="time" value="{{startTime}}" bindchange="bindStartTimeChange">
+            <view class="picker" style="width: 15%;"></view>
+          </picker>
+        </view>
+        <view style="margin: 0px 15px;">-</view>
+        <view>
+          <view class="text {{endTime && 'selected'}}">{{endTime ? endTime : "结束"}}</view>
+          <picker mode="time" value="{{endTime}}" bindchange="bindEndTimeChange">
+            <view class="picker" style="width: 15%; margin-left: 75px"></view>
+          </picker>
+        </view>
+      </view>
+      <!-- <image class="icon-more" style="width: 30rpx; height: 30rpx; margin-right: 12rpx;" src="/images/icon/sponsor-record.png"></image> -->
+    </view>
+    <view class="line">
+      <view class="flex flex-middle required">
+        <view class="title">地点</view>
+        <view class="detailed flex-item-1" bindtap="bindClickAdress">
+          <view class="text flex-item {{map.name && 'selected'}}">
+            {{map.name ? map.name : "请选择"}}
+          </view>
+        </view>
+        <!-- <image class="icon-more" style="width: 30rpx; height: 30rpx; margin-right: 12rpx;" src="/images/icon/sponsor-record.png"></image> -->
+      </view>
+      <view class="textMap">{{map.address}}</view>
+    </view>
+  </view>
+  <view class="section">
+    <view class="line" style="padding-bottom: 44rpx;">
+      <view class="title">报名人数</view>
+      <view class="detailed" style="margin-top: 10rpx;">
+        <input placeholder="最少3人，最多50人" type="number" bindinput="onChangeText" data-field="totalCount" value="{{totalCount}}" placeholder-class="#999999" />
+      </view>
+    </view>
+    <view class="description">
+      <view class="title">活动说明</view>
+      <view class="text-box">
+        <textarea name="review" maxlength="{{maxNumber}}" class="textArea" data-field="description" value="{{description}}" bindinput='inputText' placeholder="请输入少于200字"></textarea>
+        <span class="wordwrap">剩余{{maxNumber-number}}字</span>
+      </view>
+    </view>
+  </view>
+  <view class="section">
+    <view class="activity_remind flex">
+      <view class="text">活动提醒</view>
+      <view bindtap="showtip">
+        <image class="icon" src="/images/icon/activity_remind.png" mode="aspectFill"></image>
+      </view>
+      <!-- <view class="switch">
+        <switch class='switch-view' checked="{{switchChecked}}" bindchange="switchChange" type='switch' color="#07C160" />
+      </view> -->
+      <view class="switch">
+        <ds conf="{{switchConf}}" bind:doSwitch="_doSwitch"></ds>
+      </view>
+    </view>
+    <view hidden="{{checked !== true}}">
+      <view class="lineChecked">
+        <view class="flex flex-middle flex-between">
+          <view class="flex flex-middle" style="width: 86%;">
+            <view class="title">活动开始前</view>
+            <view class="detailed flex flex-item-1">
+              <input placeholder="请输入提醒时间" type="number" bindinput="onChangeText" data-field="remindBeforeTime" value="{{remindBeforeTime}}" style="width: 100%;" />
+            </view>
+          </view>
+          <view class="minutes">分钟</view>
+          <!-- <radio-group name="radio-group" bindchange="radioChange" class="flex flex-between">
+            <label wx:for="{{items}}" wx:key="{{item.value}}">
+              <view class="flex flex-middle" style="margin-right: 10px;">
+                <radio value="{{item.value}}" color="#77A4E8" />
+                <view class="">{{item.name}}</view>
+              </view>
+            </label>
+          </radio-group> -->
+        </view>
+        <view class="text">(不超过24小时)</view>
+      </view>
+    </view>
+  </view>
+  <view></view>
+  <view class="putactivity" wx:if="{{isAuthorize}}">
+    <button type="primary" bindtap="onSubmit">发起活动</button>
+  </view>
+  <view class="putactivity" wx:if="{{!isAuthorize}}">
+    <button type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发起活动</button>
+  </view>
+</view>

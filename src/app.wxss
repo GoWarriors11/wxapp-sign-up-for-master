@@ -1,0 +1,15 @@
+/**app.wxss**/
+@import 'common/style/common.wxss';
+
+pages {
+  position: relative;
+  z-index: 9999998;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #333;
+  box-sizing: border-box;
+}

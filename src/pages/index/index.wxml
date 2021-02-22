@@ -1,0 +1,153 @@
+<!-- src/pages/index/index.wxml -->
+<view class="container">
+  <view class="content" wx:for="{{list}}" wx:key="key" data-id="{{item.id}}" wx:for-key="index" wx:for-index="index" wx:for-item="item">
+    <image class="homeNewest" src="/images/icon/home-newest.png" mode="aspectFill"></image>
+    <!-- <view class="flag_begintime" wx:if="{{ item.activity.status === 'notstarted' || item.activity.status === 'inprogress'}}">
+      {{item.activity.timeDay != 0 ? item.activity.timeDay +"天后" : "是今天"}}
+    </view> -->
+    <view wx:if="{{ item.activity.status === 'notstarted' || item.activity.status === 'inprogress'}}">
+      <view class="flag_begintime" wx:if="{{item.activity.timeDay < 24}}">
+        {{item.activity.status === 'inprogress' ? "进行中" : item.activity.timeDay +"小时"}}
+      </view>
+      <!-- <view class="flag_begintime" wx:if="{{item.activity.timeDay < 1}}">
+        {{item.activity.status === 'inprogress' ? "进行中" : "即将开始"}}
+      </view> -->
+      <view class="flag_begintime" wx:if="{{24 <= item.activity.timeDay}}">
+        {{item.activity.timeDays +"天后"}}
+      </view>
+    </view>
+    <view class="user flex">
+      <image class="userImg" src="{{item.activityApplicantList[0].headImg ? item.activityApplicantList[0].headImg : '/images/icon/default-avatar.png'}}" mode="aspectFill"></image>
+      <view class="themes"></view>
+      <view class="theme">
+        <view class="theme-one flex flex-between flex-middle">
+          <view class="name flex">
+            <view class="{{item.activityApplicantList[0].nickname.length > 10 && 'nameOne'}}">
+              @{{item.activityApplicantList[0].nickname}}
+            </view>
+            <view class="nameTwo">发起</view>
+          </view>
+          <view class="time">{{item.activity.gmtCreate}}</view>
+        </view>
+        <view class="theme-two">{{item.activity.title}}</view>
+      </view>
+    </view>
+    <view class="content-line flex flex-middle">
+      <image class="icon" src="/images/icon/activity-time.png" mode="aspectFill"></image>
+      <view class="title">时间: {{item.activity.date}}-{{item.activity.finishTime}}</view>
+    </view>
+    <view class="content-line flex flex-between flex-middle" style=" margin:30rpx 0rpx 10rpx;" bindtap="openLocation" data-addressDetail="{{item.activity.addressDetail}}" data-addressDistrictName="{{item.activity.addressDistrictName}}" data-lat="{{item.activity.lat}}" data-lng="{{item.activity.lng}}">
+      <view class="flex flex-middle">
+        <image class="icon" src="/images/icon/activity-address.png" mode="aspectFill"></image>
+        <view class="title">地点: {{item.activity.addressDistrictName}}</view>
+      </view>
+      <image class="icon" src="/images/icon/icon-more.png" mode="aspectFill"></image>
+    </view>
+    <view class="detail" style="color: #999999; font-size: 28rpx; margin-left: 60rpx">
+      {{item.activity.addressDetail}}
+    </view>
+    <view class="content-line">
+      <view class="flex flex-middle">
+        <image class="icon" src="/images/icon/activity-explain.png" mode="aspectFill"></image>
+        <view class="title">活动说明:</view>
+      </view>
+      <view class="detail">{{item.activity.description}}</view>
+    </view>
+    <view class="lineation"></view>
+    <view class="content-line flex flex-between flex-middle" bindtap="showdetail" data-id="{{item.activity.id}}">
+      <view class="flex flex-middle">
+        <image class="icon" src="/images/icon/activity-people.png" mode="aspectFill"></image>
+        <view class="title">
+          共
+          <text style="color: #1DAB1A">{{item.activity.totalCount}}</text>
+          个名额,参加
+          <text style="color: #1DAB1A">{{item.activity.joinCount}}</text>
+          人,待定
+          <text style="color: #4A90E2">{{item.activity.undeterminedCount}}</text>
+          人,缺席
+          <text style="color: #C3191B">{{item.activity.absenceCount}}</text>
+          人
+        </view>
+      </view>
+      <image class="icon" src="/images/icon/icon-more.png" mode="aspectFill"></image>
+    </view>
+    <view class="join_people ">
+      <view class="join_user flex" wx:for="{{item.activityApplicantList}}" wx:key="key" data-id="{{item.id}}" wx:for-key="index" wx:for-index="index" wx:for-item="item">
+        <view class="left">
+          <image class="userImg flex" src="{{item.headImg ? item.headImg : '/images/icon/default-avatar.png'}}"></image>
+          <view class="is_join" style="background-color:#1DAB1A" wx:if="{{item.status === 'join'}}">
+            <text style="line-height:25rpx">参加</text>
+          </view>
+          <view class="is_join" style="background-color:#4A90E2" wx:if="{{item.status === 'undetermined'}}">
+            <text style="line-height:25rpx">待定</text>
+          </view>
+          <view class="is_join" style="background-color:#C3191B" wx:if="{{item.status === 'absence'}}">
+            <text style="line-height:25rpx">缺席</text>
+          </view>
+          <view class="is_join" style="background-color:#F5A623" wx:if="{{item.status === 'instead'}}">
+            <text style="line-height:25rpx">代报名</text>
+          </view>
+        </view>
+        <view class="right">
+          <view class="name ">{{item.nickname}}</view>
+          <view class="date ">{{item.gmtCreate}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="content-residue">剩余{{item.activity.remainingCount}}个名额</view>
+    <view class="btn flex">
+      <view class="is_join" bindtap="showChoise" data-id="{{item.activity.id}}" data-status="{{item.activity.status}}" wx:if="{{isAuthorize}}">
+        <button type="primary">是否报名</button>
+      </view>
+      <view class="is_join" wx:if="{{!isAuthorize}}">
+        <button type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+          是否报名
+        </button>
+      </view>
+      <view class="share" wx:if="{{item.activity.status === 'notstarted' || item.activity.status === 'inprogress'}}">
+        <button catchtap='showDialogBtn' data-id="{{item.activity.id}}" data-activityApplicantList="{{item.activityApplicantList}}">
+          分享活动
+        </button>
+      </view>
+      <view class="share" wx:if="{{item.activity.status !== 'notstarted' && item.activity.status !== 'inprogress'}}">
+        <button class="share-line" data-id="{{item.activity.id}}" data-activityApplicantList="{{item.activityApplicantList}}" open-type='share' plain="true">
+          分享活动
+        </button>
+      </view>
+      <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModals}}"></view>
+      <view class="modal-dialog" wx:if="{{showModals}}">
+        <view class="modal-content">
+          <view class="title" style="font-weight: bold;">选择水印并分享</view>
+          <button class="option" open-type='share' plain="true" wx:for="{{showList}}" wx:key="key" data-title="{{item.title}}" wx:for-key="index" wx:for-index="index" wx:for-item="item">
+            <view class="option-line" data-title="{{item.title}}">
+              <!-- <text>{{item.titles}}</text> -->
+              <view class="explain">{{item.title}}</view>
+              <view class="explains">{{item.line}}</view>
+            </view>
+          </button>
+          <!-- <button class="option" open-type='share' plain="true">
+            <view class="option-line">报名接龙啦</view>
+          </button>
+          <button class="option" open-type='share' plain="true">
+            <view class="option-line">有人报名吗</view>
+          </button>
+          <button class="option" open-type='share' plain="true">
+            <text>本人待定</text>
+            <view class="explain">不影响报名状态</view>
+          </button>
+          <button class="option" open-type='share' plain="true">
+            <text>本人缺席</text>
+            <view class="explain">不影响报名状态</view>
+          </button> -->
+        </view>
+        <view class="modal-footer">
+          <view class="btn-cancel" bindtap="hideModal" data-status="cancel">取消</view>
+        </view>
+      </view>
+    </view>
+    <!-- 水印 -->
+    <canvas-watermark text="{{text}}" isReveal="{{isReveal}}"></canvas-watermark>
+  </view>
+  <nothing-more isLast="{{lastPage}}" wx:if="{{!isNull}}"></nothing-more>
+  <list-null isNull="{{isNull}}" text="暂无相关活动记录~"></list-null>
+</view>

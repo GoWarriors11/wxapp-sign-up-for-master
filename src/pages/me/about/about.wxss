@@ -1,0 +1,17 @@
+.top {
+  background-color: white;
+  padding: 60rpx; }
+  .top .icon {
+    text-align: center; }
+    .top .icon .brand {
+      width: 180rpx;
+      height: 180rpx; }
+    .top .icon .title {
+      padding-top: 30rpx;
+      font-size: 48rpx;
+      font-weight: bold; }
+
+.text {
+  line-height: 45rpx;
+  color: #666666;
+  padding: 30rpx; }

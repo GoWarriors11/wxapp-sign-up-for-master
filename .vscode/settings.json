@@ -1,0 +1,36 @@
+{
+    "search.exclude": {
+        ".vscode/": true,
+        "node_modules/": true,
+        "package-lock.json": true,
+    },
+    "editor.tabSize": 2,
+    "editor.formatOnSave": false, // 根据vscode内置插件自动格式化
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true, // eslint保存时自动修复
+    },
+    "eslint.alwaysShowStatus": true,
+    "files.trimTrailingWhitespace": false, // 禁止保存文件时剪裁尾空格(markdown等文件的尾空格是有特殊语义的)
+    "jest.autoEnable": false, //  禁止jest自动跑测试用例
+    "npm-scripts.showStartNotification": false,
+    "cSpell.words": [
+        "alioss",
+        "appid",
+        "benma",
+        "eslintignore",
+        "followee",
+        "gitignore",
+        "gqlconfig",
+        "graphiql",
+        "graphql",
+        "minapp",
+        "miniprogram",
+        "openid",
+        "stylelint",
+        "unionid",
+        "wechat",
+        "wxapp",
+        "wxgql",
+        "wxss"
+    ],
+}

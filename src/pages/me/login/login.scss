@@ -1,0 +1,44 @@
+page{
+  background-color: #ffffff;
+}
+
+.login{
+  .header{
+    padding: 0rpx 0 100rpx;
+    .name{
+      text-align: center;
+      margin: 100rpx 50rpx 0;
+      font-size: 34rpx;
+      font-weight: bold;
+    }
+  }
+  .form{
+    position: relative;
+    padding: 0 70rpx;
+    .formItem{
+      width: 610rpx;
+      height: 100rpx;
+      margin: 0 0 60rpx 0;
+      // padding: 0 60rpx;
+      border-radius: 4rpx;
+      background-color:#F0F0F0; 
+      .flex-item{
+        margin-left: 30rpx;
+      }
+    }
+  }
+  .staff{
+    width: 610rpx;
+    height: 100rpx;
+    margin: 30rpx 70rpx;
+    border-radius: 4rpx;
+    background-color: #0073B4;
+    .affirm{
+      color: #EBEBEB;
+      text-align: center;
+      font-size: 32rpt;
+      font-weight: bold;
+      line-height: 100rpx;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+/* components/list-null/list-null.wxss */
+/* .list-null{
+  text-align: center;
+  margin-top: 20vw;
+}
+image{
+  width: 40vw;
+  height: 40vw;
+}
+.null{
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+  margin-top: 20rpx;
+} */
+
+.noDataPage{
+  text-align: center;
+  margin-top: 20vw;
+}
+.icon{
+  width: 500rpx;
+  height: 500rpx;
+}
+.text{
+  color: hsla(0, 0%, 60%, 1);
+  margin-top: 40rpx;
+  font-size: 30rpx;
+}
+.btn{
+  margin: 40rpx 220rpx;
+  padding: 11px 0;
+  color: #fff;
+  background-color: hsla(119, 74%, 39%, 1);
+  border-radius: 4rpx;
+  font-size: 32rpx;
+}

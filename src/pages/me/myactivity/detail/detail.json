@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "canvas-watermark": "/components/watermark/watermark",
+    "authorize": "/components/authorize/authorize",
+    "ds": "/components/switch/switch"
+  },
+  "navigationBarTitleText":"活动详情"
+}

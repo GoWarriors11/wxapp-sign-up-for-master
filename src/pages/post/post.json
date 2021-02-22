@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "authorize": "/components/authorize/authorize",
+    "ds": "/components/switch/switch"
+  },
+  "navigationBarTitleText":"发起活动"
+}

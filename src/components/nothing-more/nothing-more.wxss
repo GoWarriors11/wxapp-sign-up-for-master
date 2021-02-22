@@ -1,0 +1,7 @@
+/* components/nothing-more/nothing-more.wxss */
+.nothing{
+  padding: 30rpx 0;
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+}

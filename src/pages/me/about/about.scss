@@ -1,0 +1,21 @@
+.top{
+  background-color: white;
+  padding: 60rpx;
+  .icon{
+    text-align: center;
+    .brand{
+      width: 180rpx;
+      height: 180rpx;
+    }
+    .title{
+      padding-top: 30rpx;
+      font-size: 48rpx;
+      font-weight: bold;
+    }
+  }
+}
+.text{
+  line-height: 45rpx;
+  color: hsla(0, 0%, 40%, 1);
+  padding: 30rpx;
+}

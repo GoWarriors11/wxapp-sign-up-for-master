@@ -1,0 +1,24 @@
+  /* watermark.wxss */
+  .water_top{
+    position: fixed;
+    top: 15%;
+    bottom: 26%;
+    /* left: 0;
+    right: 0; */
+    transform:rotate(-10deg);
+    /* opacity: 0.9; */
+    z-index: 9999999999;
+    transform:rotate(30deg);
+    -ms-transform:rotate(30deg); /* IE 9 */
+    -webkit-transform:rotate(30deg); /* Safari and Chrome */
+  }
+  .water-text{
+    color:#C3191B;
+    text-align: center;
+    font-size: 26px;
+    /* margin: 365rpx 280rpx 0rpx 50rpx; */
+    padding: 20rpx 24rpx;
+    border: 6rpx solid #C3191B;
+    letter-spacing: 16rpx;
+    font-weight: 600;
+  }

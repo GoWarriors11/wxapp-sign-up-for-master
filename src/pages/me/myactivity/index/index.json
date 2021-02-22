@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText":"我的活动",
+  "usingComponents": {
+    "nothing-more": "/components/nothing-more/nothing-more",
+    "list-null": "/components/list-null/list-null"
+  }
+}
